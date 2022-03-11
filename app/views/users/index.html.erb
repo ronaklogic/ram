@@ -1,0 +1,10 @@
+<% User.all.each do |user| %><br> 
+  <% user.images.each do |image| %><br> 
+    <%= image_tag image %>
+    <%= link_to "Edit", edit_user_path(image.id) %>
+  <% end %>
+<% end %>
+
+<br><br>
+<%= link_to "new", new_user_path %>
+

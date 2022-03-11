@@ -1,0 +1,35 @@
+
+<h1>Create Employee Record</h1>
+<%= form_with model: @employee do |form|%>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>  <br><br>
+
+  <%= form.label :dob %>
+  <%= form.date_field :dob %>  <br><br>
+
+  <%= form.radio_button :gender, "male" %>
+  <%= form.label :gender, "male" %>
+  <%= form.radio_button :gender, "female" %>
+  <%= form.label :gender, "female" %>  <br><br>
+
+  <% hobbies = ["cricket", "wolly ball", "basketball","gili danda"] %>
+    <% hobbies.each do |hobby| %>
+    <%= form.check_box :hobby, { multiple: true }, hobby, nil %> 
+    <%= hobby %>
+  <% end %>
+  <br><br>
+
+  <%= form.select :city, ["surat", "rajkot", "amreli","baroda", "ahmedabad"] %> <br><br>
+
+  <%= form.label :address %>
+  <%= form.text_area :address %><br><br>
+
+  <%= form.label :mobile_no %>
+  <%= form.text_field :mobile_no %><br><br>
+
+  <%= form.submit %>
+  <br><br> 
+<% end %> 
+
+<li><%= link_to "Back", employees_path %></li>

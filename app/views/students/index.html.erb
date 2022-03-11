@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <% @students.each do |student| %><br> 
+      <td><%= image_tag student.avatar,style: 'hight: 11em; width:11em;' %></td>
+    <% end %>
+  </tr>
+</table>
+<br><br>
+<%= link_to "new" , new_student_path %>
+      
